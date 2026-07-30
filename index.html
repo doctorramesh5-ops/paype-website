@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PayPe Technologies · Payments, ERP and AI for Indian business</title>
+<meta name="description" content="PayPe Technologies Pvt. Ltd. — payment gateway, ERP, HRMS and AI app builder for Indian businesses. Coimbatore, Tamil Nadu." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#140611;
+    --panel:#1E0A1A;
+    --panel-2:#260E21;
+    --edge:#3A1730;
+    --edge-lit:#5C2247;
+    --amber:#DA0077;--amber-lit:#FF3D95;
+    --flame:#FF5C9E;
+    --teal:#3DD9A0;
+    --bone:#FBF3F8;
+    --ash:#A794A2;
+    --ash-dim:#74606F;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:80px;}
+  body{
+    background:var(--void);color:var(--bone);
+    font-family:"Outfit",system-ui,sans-serif;
+    font-size:16px;line-height:1.65;font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif;font-weight:600;line-height:1.15;}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace;}
+  a{color:var(--amber-lit);text-decoration:none;}
+  a:hover{color:#FF7AB8;}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px;}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  section{padding:74px 0;border-top:1px solid var(--edge);}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--amber-lit);
+    letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;
+  }
+  .lede{color:var(--ash);font-size:17px;max-width:60ch;}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:40;background:rgba(20,6,17,.92);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--edge);
+  }
+  .nav-in{
+    max-width:1120px;margin:0 auto;padding:13px 24px;
+    display:flex;align-items:center;gap:22px;
+  }
+  .logo{display:flex;align-items:center;gap:10px;margin-right:auto;}
+  .mark{
+    width:32px;height:32px;border-radius:9px;flex-shrink:0;
+    background:linear-gradient(140deg,var(--amber),var(--flame));
+    display:grid;place-items:center;
+    font-family:"Playfair Display",serif;font-weight:700;font-size:18px;color:#140611;
+  }
+  .logo .name{font-family:"Playfair Display",serif;font-weight:700;font-size:19px;color:var(--amber-lit);}
+  .nav-links{display:flex;gap:20px;}
+  .nav-links a{color:var(--ash);font-size:14.5px;font-weight:400;}
+  .nav-links a:hover{color:var(--bone);}
+  .nav-cta{display:flex;gap:9px;}
+  .btn{
+    border:0;border-radius:9px;padding:9px 17px;font-family:"Outfit",sans-serif;
+    font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;display:inline-block;
+  }
+  .btn-ghost{background:transparent;border:1px solid var(--edge);color:var(--ash);}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber);}
+  .btn-solid{background:linear-gradient(140deg,var(--amber),var(--flame));color:#FFFFFF;font-weight:600;}
+  .btn-solid:hover{color:#FFFFFF;filter:brightness(1.08);}
+  .burger{display:none;background:none;border:1px solid var(--edge);border-radius:8px;
+    color:var(--ash);padding:7px 11px;font-size:13px;cursor:pointer;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:84px 0 70px;border-top:0;}
+  .hero h1{font-size:clamp(38px,6.2vw,68px);letter-spacing:-.02em;margin-bottom:20px;}
+  .hero h1 em{font-style:italic;color:var(--amber);}
+  .hero .lede{font-size:18.5px;margin-bottom:14px;}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px;}
+  .badge{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ash);
+    border:1px solid var(--edge);border-radius:7px;padding:5px 10px;
+  }
+  .badge b{color:var(--teal);font-weight:500;}
+
+  /* ---------- Signature: the two doors ---------- */
+  .doors{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px;
+  }
+  .door{
+    background:var(--panel);border:1px solid var(--edge);border-radius:15px;
+    padding:26px 24px;display:flex;flex-direction:column;
+    transition:border-color .18s ease,transform .18s ease;
+  }
+  .door:hover{border-color:var(--edge-lit);transform:translateY(-2px);}
+  .door .who{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--amber-lit);margin-bottom:12px;
+  }
+  .door h3{font-size:24px;margin-bottom:8px;}
+  .door p{color:var(--ash);font-size:14.5px;margin-bottom:20px;flex:1;}
+  .door ul{list-style:none;margin-bottom:22px;}
+  .door li{color:var(--ash);font-size:13.5px;padding-left:16px;position:relative;margin-bottom:5px;}
+  .door li:before{content:"·";position:absolute;left:4px;color:var(--amber);font-weight:700;}
+
+  /* ---------- Cards grid ---------- */
+  .grid{display:grid;gap:14px;margin-top:34px;}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  .card{
+    background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:24px 22px;
+    transition:border-color .18s ease;
+  }
+  .card:hover{border-color:var(--edge-lit);}
+  .card.lit{border-color:var(--edge-lit);background:var(--panel-2);}
+  .tile{
+    width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+    background:rgba(230,0,126,.1);border:1px solid rgba(230,0,126,.2);
+    font-size:20px;margin-bottom:16px;
+  }
+  .card h3{font-size:19px;margin-bottom:7px;}
+  .card p{color:var(--ash);font-size:14.5px;}
+  .card .meta{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;margin-top:14px;
+    letter-spacing:.06em;color:var(--teal);
+  }
+  .card .meta.soon{color:var(--ash-dim);}
+  .card .go{display:inline-block;margin-top:14px;font-size:13.5px;font-weight:500;}
+
+  /* ---------- Pricing ---------- */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+  .tier{background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:24px 22px;
+    display:flex;flex-direction:column;}
+  .tier.pick{border-color:var(--amber);background:var(--panel-2);}
+  .tier .tname{font-family:"Playfair Display",serif;font-size:20px;font-weight:600;margin-bottom:4px;}
+  .tier .tfor{color:var(--ash-dim);font-size:13px;margin-bottom:16px;}
+  .price{font-family:"Playfair Display",serif;font-size:30px;color:var(--amber-lit);line-height:1.1;}
+  .price .per{font-family:"Outfit",sans-serif;font-size:13px;color:var(--ash-dim);font-weight:300;}
+  .setme{font-family:"IBM Plex Mono",monospace;font-size:13px;color:#DA0077;
+    background:rgba(230,0,126,.11);border:1px dashed rgba(230,0,126,.4);
+    border-radius:6px;padding:3px 8px;display:inline-block;}
+  .tier ul{list-style:none;margin:18px 0 22px;flex:1;}
+  .tier li{color:var(--ash);font-size:14px;padding-left:18px;position:relative;margin-bottom:7px;}
+  .tier li:before{content:"✓";position:absolute;left:0;color:var(--teal);font-size:12px;}
+  .tier .btn{width:100%;text-align:center;}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
+
+  /* ---------- Legal strip ---------- */
+  .legal-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px;}
+  .legal-row a{
+    background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px;
+    display:block;color:var(--bone);font-size:15px;font-weight:400;
+  }
+  .legal-row a:hover{border-color:var(--amber);color:var(--amber);}
+  .legal-row span{display:block;color:var(--ash-dim);font-size:12.5px;margin-top:3px;}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--edge);padding:52px 0 34px;}
+  .fgrid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:32px;}
+  .fcol h4{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ash-dim);
+    letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:14px;
+  }
+  .fcol a,.fcol p{display:block;color:var(--ash);font-size:14px;margin-bottom:8px;}
+  .fcol a:hover{color:var(--amber);}
+  .fabout p{color:var(--ash);font-size:14px;max-width:34ch;margin-bottom:16px;}
+  .regs{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:22px;
+    margin-top:40px;padding-top:26px;border-top:1px solid var(--edge);
+  }
+  .reg h5{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ash-dim);
+    letter-spacing:.15em;text-transform:uppercase;font-weight:500;margin-bottom:5px;}
+  .reg p{font-size:14px;color:var(--bone);}
+  .reg p.id{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--amber);}
+  .fbase{
+    margin-top:26px;padding-top:22px;border-top:1px solid var(--edge);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;
+  }
+  .fbase p{color:var(--ash-dim);font-size:13px;}
+  .rails{display:flex;gap:7px;flex-wrap:wrap;}
+  .rail{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ash);
+    border:1px solid var(--edge);border-radius:6px;padding:4px 9px;}
+
+
+  /* pricing variants */
+  .tier{position:relative;}
+  .tiers4{grid-template-columns:repeat(4,1fr);}
+  .pop{
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    font-family:"Outfit",sans-serif;font-size:11.5px;font-weight:600;
+    padding:5px 15px;border-radius:99px;white-space:nowrap;letter-spacing:.02em;
+  }
+  .pop.amber{background:linear-gradient(140deg,var(--amber),var(--flame));color:#FFFFFF;}
+  .pop.teal{background:linear-gradient(140deg,var(--teal),#4FC3D9);color:#04231D;}
+  .tier.pick-teal{border-color:var(--teal);background:var(--panel-2);}
+  .tier.pick-amber{border-color:var(--amber);background:var(--panel-2);}
+  .tlabel{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.15em;
+    text-transform:uppercase;margin-bottom:16px;
+  }
+  .tlabel.grey{color:var(--ash-dim);}
+  .tlabel.tl{color:var(--teal);}
+  .tlabel.am{color:var(--amber-lit);}
+  .price .cur{font-size:.58em;vertical-align:super;letter-spacing:-.02em;}
+  .price.white{color:var(--bone);}
+  .tier.at li:before{color:var(--amber-lit);}
+  .tier li.no{color:var(--ash-dim);}
+  .tier li.no:before{content:"\2717";color:var(--ash-dim);}
+  .btn-teal{background:linear-gradient(140deg,var(--teal),#4FC3D9);color:#04231D;font-weight:600;}
+  .btn-teal:hover{color:#04231D;filter:brightness(1.08);}
+  .pricenote{color:var(--ash);font-size:15px;margin-top:6px;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .g3,.tiers,.tiers4{grid-template-columns:1fr 1fr;}
+    .split{grid-template-columns:1fr;gap:34px;}
+    .fgrid{grid-template-columns:1fr 1fr;gap:26px;}
+    .legal-row{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:680px){
+    .nav-links{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      background:var(--void);border-bottom:1px solid var(--edge);
+      flex-direction:column;gap:0;padding:8px 24px 16px;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:10px 0;}
+    .burger{display:block;}
+    .nav-cta .btn-ghost{display:none;}
+    section{padding:56px 0;}
+    .hero{padding:56px 0 48px;}
+    .doors,.g3,.g2,.tiers,.tiers4,.fgrid,.legal-row{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .door,.card{transition:none;}
+    .door:hover{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="#top" class="logo">
+      <span class="mark">P</span>
+      <span class="name">PayPe</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#platform">Platform</a>
+      <a href="#payments">Payments</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/docs/">Developers</a>
+      <a href="#company">Company</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="/admin/login.html">Admin</a>
+      <a class="btn btn-solid" href="/merchant/login.html">Merchant sign in</a>
+      <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">Menu</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<div class="wrap hero" id="top">
+  <div class="eyebrow">PayPe Technologies Pvt. Ltd. · Coimbatore</div>
+  <h1>Payments, ERP and AI,<br />built for <em>Indian business</em>.</h1>
+  <p class="lede">One company for the software a growing business actually runs on — collecting
+  money, managing operations, and building the tools it cannot buy off the shelf.</p>
+  <div class="badges">
+    <span class="badge">Payment gateway · <b>Live</b></span>
+    <span class="badge">PhonePe TSP partner</span>
+    <span class="badge">ERP · <b>8 modules</b></span>
+    <span class="badge">Data hosted in India</span>
+  </div>
+
+  <!-- signature: the two doors -->
+  <div class="doors">
+    <div class="door">
+      <div class="who">For merchants</div>
+      <h3>Merchant portal</h3>
+      <p>Sign in with your registered email or mobile. No password to remember.</p>
+      <ul>
+        <li>See every payment and refund</li>
+        <li>Copy your payment link</li>
+        <li>Generate your own API keys</li>
+      </ul>
+      <a class="btn btn-solid" href="/merchant/login.html">Sign in to your account</a>
+    </div>
+    <div class="door">
+      <div class="who">For PayPe staff</div>
+      <h3>Admin console</h3>
+      <p>Onboard merchants, manage keys, and monitor settlement across the platform.</p>
+      <ul>
+        <li>Merchant onboarding and status</li>
+        <li>Platform-wide transactions</li>
+        <li>Key issuance and revocation</li>
+      </ul>
+      <a class="btn btn-ghost" href="/admin/login.html">Admin sign in</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PLATFORM ================= -->
+<section id="platform">
+  <div class="wrap">
+    <div class="eyebrow">The platform</div>
+    <h2 style="font-size:34px;margin-bottom:12px">Four products, one company</h2>
+    <p class="lede">Each runs on its own domain and can be used on its own. Together they cover
+    collection, operations and people.</p>
+
+    <div class="grid g2">
+      <div class="card lit">
+        <div class="tile">⚡</div>
+        <h3>PayPe AI Builder</h3>
+        <p>Describe the tool you need in plain English and get a working application — CRMs,
+        dashboards, internal portals. Full code ownership, deploy as standalone files.</p>
+        <div class="meta">Live · paype.co.in</div>
+        <a class="go" href="https://paype.co.in" target="_blank" rel="noopener">Open AI Builder →</a>
+      </div>
+
+      <div class="card">
+        <div class="tile">🏦</div>
+        <h3>BankMe</h3>
+        <p>Banking and payment utilities — UPI, bill payments, and account services for
+        businesses and their customers.</p>
+        <div class="meta">Live · bankme.co.in</div>
+        <a class="go" href="https://bankme.co.in" target="_blank" rel="noopener">Open BankMe →</a>
+      </div>
+
+      <div class="card">
+        <div class="tile">📊</div>
+        <h3>PayPe ERP</h3>
+        <p>Eight modules covering accounting, inventory, CRM, procurement and an executive
+        dashboard. Built for Indian compliance — GST, TDS, e-invoicing.</p>
+        <div class="meta">Live · erp.paype.co.in</div>
+        <a class="go" href="https://erp.paype.co.in" target="_blank" rel="noopener">Open ERP →</a>
+      </div>
+
+      <div class="card">
+        <div class="tile">👥</div>
+        <h3>PayPe HRMS</h3>
+        <p>Payroll, attendance, leave and digital employee ID. Runs standalone or alongside
+        the ERP.</p>
+        <div class="meta">Live · hr.paype.co.in</div>
+        <a class="go" href="https://hr.paype.co.in" target="_blank" rel="noopener">Open HRMS →</a>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:52px">ERP modules</div>
+    <div class="grid g3">
+      <div class="card"><div class="tile">📒</div><h3>Accounting</h3><p>GST, TDS, invoicing, P&amp;L, bank reconciliation.</p><div class="meta">Module 2</div></div>
+      <div class="card"><div class="tile">📦</div><h3>Inventory</h3><p>Warehouse, barcode, purchase orders, stock movement.</p><div class="meta">Module 3</div></div>
+      <div class="card"><div class="tile">🎯</div><h3>CRM</h3><p>Leads, pipeline, quotations, follow-ups.</p><div class="meta">Module 4</div></div>
+      <div class="card"><div class="tile">🛍️</div><h3>Procurement</h3><p>Vendors, RFQ, approvals, GRN, vendor payments.</p><div class="meta">Module 5</div></div>
+      <div class="card"><div class="tile">🤖</div><h3>AI Assistant</h3><p>Journal entries, GST lookup, document OCR, email drafting.</p><div class="meta">Module 7</div></div>
+      <div class="card lit"><div class="tile">👑</div><h3>CEO Dashboard</h3><p>Live figures from every module in one view.</p><div class="meta">Module 8</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAYMENTS ================= -->
+<section id="payments">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow">Payments</div>
+        <h2 style="font-size:34px;margin-bottom:14px">Take payments without building a gateway</h2>
+        <p class="lede" style="margin-bottom:20px">PayPe operates as a Technology Service
+        Provider partner, so your customers pay through established payment rails while you
+        deal with one integration and one dashboard.</p>
+        <p class="lede" style="margin-bottom:26px">Accept UPI, cards and net banking. Issue
+        full or partial refunds. Every payment is reconciled automatically until it reaches a
+        final state, so an abandoned checkout never leaves your books guessing.</p>
+        <a class="btn btn-solid" href="/docs/">Read the API documentation</a>
+      </div>
+      <div class="grid" style="margin-top:0;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="card"><div class="tile">📱</div><h3>UPI</h3><p>QR, intent and collect requests.</p></div>
+        <div class="card"><div class="tile">💳</div><h3>Cards</h3><p>Credit and debit, Indian and international.</p></div>
+        <div class="card"><div class="tile">🏛️</div><h3>Net banking</h3><p>Major Indian banks.</p></div>
+        <div class="card"><div class="tile">↩️</div><h3>Refunds</h3><p>Full or partial, with bank reference.</p></div>
+        <div class="card"><div class="tile">🔔</div><h3>Webhooks</h3><p>Signed event delivery.</p><div class="meta soon">Coming soon</div></div>
+        <div class="card"><div class="tile">📄</div><h3>Settlement reports</h3><p>Daily gross, fees, net.</p><div class="meta soon">Coming soon</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="eyebrow">Pricing</div>
+    <h2 style="font-size:34px;margin-bottom:10px">Simple, transparent pricing</h2>
+    <p class="lede">Every plan is billed in Indian Rupees. GST applies. Cancel anytime.</p>
+
+    <!-- ---------- AI Builder ---------- -->
+    <div class="eyebrow" style="margin-top:50px">PayPe AI Builder</div>
+    <p class="pricenote" style="margin-bottom:30px">All plans billed in &#8377; INR &middot; Cancel anytime &middot; No hidden charges</p>
+    <div class="tiers">
+      <div class="tier at">
+        <div class="tname">Starter</div>
+        <div class="price"><span class="cur">&#8377;</span>749<span class="per">/month</span></div>
+        <div class="tfor" style="margin-top:8px">Perfect for individuals and small teams getting started.</div>
+        <ul>
+          <li>20 AI app builds per month</li>
+          <li>5 saved apps</li>
+          <li>Code export</li>
+          <li>Email support</li>
+          <li>Mobile-ready apps</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://paype.co.in" target="_blank" rel="noopener">Get started</a>
+      </div>
+
+      <div class="tier at pick-amber">
+        <span class="pop amber">&#9889; Most popular</span>
+        <div class="tname">Pro</div>
+        <div class="price"><span class="cur">&#8377;</span>2,499<span class="per">/month</span></div>
+        <div class="tfor" style="margin-top:8px">For growing businesses that build frequently.</div>
+        <ul>
+          <li>80 AI app builds per month</li>
+          <li>25 saved apps</li>
+          <li>Priority builds</li>
+          <li>API access</li>
+          <li>Chat support</li>
+          <li>Custom branding</li>
+        </ul>
+        <a class="btn btn-solid" href="https://paype.co.in" target="_blank" rel="noopener">Start Pro trial</a>
+      </div>
+
+      <div class="tier at">
+        <div class="tname">Enterprise</div>
+        <div class="price"><span class="cur">&#8377;</span>8,499<span class="per">/month</span></div>
+        <div class="tfor" style="margin-top:8px">Unlimited power for large teams and enterprises.</div>
+        <ul>
+          <li>Unlimited AI builds</li>
+          <li>Unlimited saved apps</li>
+          <li>Custom domain</li>
+          <li>SLA guarantee (99.9%)</li>
+          <li>Dedicated account manager</li>
+          <li>GST invoice</li>
+        </ul>
+        <a class="btn btn-ghost" href="mailto:admin@paype.co.in?subject=AI%20Builder%20Enterprise">Contact sales</a>
+      </div>
+    </div>
+
+    <!-- ---------- ERP ---------- -->
+    <div class="eyebrow" style="margin-top:64px">ERP Subscription Plans</div>
+    <p class="pricenote" style="margin-bottom:30px">14-day free trial &middot; No credit card required &middot; Cancel anytime</p>
+    <div class="tiers tiers4">
+      <div class="tier">
+        <div class="tlabel grey">Starter</div>
+        <div class="price white"><span class="cur">&#8377;</span>2,999<span class="per">/mo</span></div>
+        <div class="tfor" style="margin-top:8px">1 company &middot; 5 users</div>
+        <ul>
+          <li>Accounting &amp; GST</li>
+          <li>Basic HRMS</li>
+          <li>Inventory</li>
+          <li class="no">AI Assistant</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://erp.paype.co.in" target="_blank" rel="noopener">Start free trial</a>
+      </div>
+
+      <div class="tier pick-teal">
+        <span class="pop teal">&#11088; Most popular</span>
+        <div class="tlabel tl">Growth</div>
+        <div class="price white"><span class="cur">&#8377;</span>7,999<span class="per">/mo</span></div>
+        <div class="tfor" style="margin-top:8px">1 company &middot; 25 users</div>
+        <ul>
+          <li>All Accounting &amp; GST</li>
+          <li>Full HRMS + payroll</li>
+          <li>Inventory + CRM + procurement</li>
+          <li>AI Assistant</li>
+        </ul>
+        <a class="btn btn-teal" href="https://erp.paype.co.in" target="_blank" rel="noopener">Start free trial</a>
+      </div>
+
+      <div class="tier">
+        <div class="tlabel grey">Business</div>
+        <div class="price white"><span class="cur">&#8377;</span>19,999<span class="per">/mo</span></div>
+        <div class="tfor" style="margin-top:8px">3 companies &middot; unlimited users</div>
+        <ul>
+          <li>All 8 modules</li>
+          <li>AI Assistant unlimited</li>
+          <li>CEO dashboard</li>
+          <li>Priority support + SLA</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://erp.paype.co.in" target="_blank" rel="noopener">Start free trial</a>
+      </div>
+
+      <div class="tier at pick-amber">
+        <div class="tlabel am">Enterprise</div>
+        <div class="price white" style="font-size:34px">Custom</div>
+        <div class="tfor" style="margin-top:8px">Unlimited &middot; white label</div>
+        <ul>
+          <li>Unlimited companies &amp; users</li>
+          <li>White label option</li>
+          <li>Custom modules + dedicated server</li>
+          <li>24/7 support + SLA</li>
+        </ul>
+        <a class="btn btn-solid" href="mailto:admin@paype.co.in?subject=ERP%20Enterprise">Contact sales</a>
+      </div>
+    </div>
+
+    <p style="color:var(--ash-dim);font-size:13.5px;margin-top:26px">Payment gateway pricing is
+    quoted per merchant based on volume and category. Write to
+    <a href="mailto:admin@paype.co.in">admin@paype.co.in</a> for a rate card.</p>
+  </div>
+</section>
+
+<!-- ================= LEGAL ================= -->
+<section id="legal">
+  <div class="wrap">
+    <div class="eyebrow">Policies</div>
+    <h2 style="font-size:30px;margin-bottom:10px">Terms and policies</h2>
+    <p class="lede">What you agree to when you use PayPe, how we handle your data, and how
+    refunds work.</p>
+    <div class="legal-row">
+      <a href="/terms.html">Terms &amp; Conditions<span>Rules for using PayPe</span></a>
+      <a href="/privacy.html">Privacy Policy<span>What we collect and why</span></a>
+      <a href="/refund.html">Refund Policy<span>Cancellations and refunds</span></a>
+      <a href="/docs/">API Documentation<span>For developers</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="company">
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol fabout">
+        <div class="logo" style="margin-bottom:14px">
+          <span class="mark">P</span>
+          <span class="name">PayPe Technologies</span>
+        </div>
+        <p>Payments, ERP and AI tools for Indian businesses. Built in Coimbatore.</p>
+        <div class="badges">
+          <span class="badge">🔒 HTTPS everywhere</span>
+          <span class="badge">🇮🇳 Made in India</span>
+        </div>
+      </div>
+
+      <div class="fcol">
+        <h4>Products</h4>
+        <a href="https://paype.co.in" target="_blank" rel="noopener">AI Builder</a>
+        <a href="https://bankme.co.in" target="_blank" rel="noopener">BankMe</a>
+        <a href="https://erp.paype.co.in" target="_blank" rel="noopener">ERP</a>
+        <a href="https://hr.paype.co.in" target="_blank" rel="noopener">HRMS</a>
+        <a href="#payments">Payment gateway</a>
+      </div>
+
+      <div class="fcol">
+        <h4>Sign in</h4>
+        <a href="/merchant/login.html">Merchant portal</a>
+        <a href="/admin/login.html">Admin console</a>
+        <a href="/docs/">API documentation</a>
+        <h4 style="margin-top:22px">Legal</h4>
+        <a href="/terms.html">Terms &amp; Conditions</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/refund.html">Refund Policy</a>
+      </div>
+
+      <div class="fcol">
+        <h4>Contact</h4>
+        <a href="mailto:admin@paype.co.in">admin@paype.co.in</a>
+        <a href="mailto:itsupport@paype.co.in">itsupport@paype.co.in</a>
+        <a href="tel:+919944857191">+91 99448 57191</a>
+        <a href="tel:+918248839950">+91 82488 39950</a>
+      </div>
+    </div>
+
+    <div class="regs">
+      <div class="reg">
+        <h5>Registered office</h5>
+        <p>277/1A, Annamalai Industrial Park,<br />Kalapatti, Coimbatore 641048,<br />Tamil Nadu, India</p>
+      </div>
+      <div class="reg"><h5>CIN</h5><p class="id">U74994TN2022PTC151114</p></div>
+      <div class="reg"><h5>GSTIN</h5><p class="id">33AAMCP7960K1ZU</p></div>
+      <div class="reg"><h5>LEI</h5><p class="id">64886C37CCC7Z3ML1573</p></div>
+    </div>
+
+    <div class="fbase">
+      <p>© 2026 PayPe Technologies Pvt. Ltd. All rights reserved.</p>
+      <div class="rails">
+        <span class="rail">UPI</span>
+        <span class="rail">Cards</span>
+        <span class="rail">Net Banking</span>
+        <span class="rail">Wallets</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // close the mobile menu after a jump
+  document.querySelectorAll("#navLinks a").forEach(function (a) {
+    a.addEventListener("click", function () {
+      document.getElementById("navLinks").classList.remove("open");
+    });
+  });
+</script>
+</body>
+</html>
