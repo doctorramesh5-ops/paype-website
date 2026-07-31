@@ -22,7 +22,8 @@ module.exports = function activation(gw) {
       const tierKey = String((req.body && req.body.tier) || "").toUpperCase();
       const tier = TIERS[tierKey];
       if (!tier) return res.status(400).json({ error: "Unknown pricing tier" });
-      const { businessName, contactName, email, phone } = req.body || {};
+      const { businessName, contactName, phone } = req.body || {};
+      const email = String((req.body && req.body.email) || "").trim().toLowerCase();
       if (!businessName || !email) return res.status(400).json({ error: "Business name and email are required" });
 
       const amountPaise = amountWithGst(tier.basePaise);
@@ -60,7 +61,8 @@ module.exports = function activation(gw) {
       const tierKey = String((req.body && req.body.tier) || "").toUpperCase();
       const tier = TIERS[tierKey];
       if (!tier) return res.status(400).json({ error: "Unknown pricing tier" });
-      const { businessName, contactName, email, phone } = req.body || {};
+      const { businessName, contactName, phone } = req.body || {};
+      const email = String((req.body && req.body.email) || "").trim().toLowerCase();
       if (!businessName || !email) return res.status(400).json({ error: "Business name and email are required" });
 
       const amountPaise = amountWithGst(tier.basePaise);
